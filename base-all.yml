@@ -12,8 +12,8 @@
     when: "hostvars[item]['ansible_host'] is defined"
     with_items: groups['all']
 
-  - name: install ntp
+  - name: Install ntp
     yum: name=ntp state=present
 
-  - name: start ntp
-    service: name=ntp state=started
+  - name: start ntpd
+    service: name=ntpd state=started
