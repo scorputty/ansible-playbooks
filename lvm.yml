@@ -22,5 +22,5 @@
 
     - name: Mount data LV
       mount: name=/data src=/dev/datavg/data fstype=ext4
-      state=mounted opts="errors=remount-ro,noatime,barrier=0"
-      dump=0 passno=2
+             state=mounted opts="errors=remount-ro,noatime,barrier=0"
+             dump=0 passno=2
