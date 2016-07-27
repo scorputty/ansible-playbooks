@@ -3,7 +3,7 @@
 # all
 - hosts: all
   gather_facts: yes
-  become: yes
+  become: true
 
   tasks:
 

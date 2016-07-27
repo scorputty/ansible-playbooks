@@ -3,7 +3,7 @@
 # all
 - hosts: all
   gather_facts: yes
-  sudo: yes
+  become: true
 
   tasks:
 
