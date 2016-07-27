@@ -18,6 +18,8 @@
 
     - lvol: vg=datavg lv=data size=128
 
+    - filesystem: fstype=ext4 dev=/dev/sdb
+
     - name: Mount data LV
       mount: name=/data src=/dev/datavg/data fstype=ext4
              state=mounted opts="errors=remount-ro,noatime,barrier=0"
