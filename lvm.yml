@@ -15,7 +15,7 @@
         sdb.stdout == "Error: Partition doesn't exist."
 
     - lvol: vg=datavg lv=data size=128 pvs=/dev/sdb
-      when: sdb.rc != 0
+      when: sdb.rc = 0
 
       # - name: Ensure data mountpoint exists
       #   file: path=/data state=directory owner=root group=root mode=0755
