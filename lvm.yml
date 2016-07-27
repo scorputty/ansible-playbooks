@@ -12,8 +12,8 @@
       register: sdb
       failed_when: sdb.rc is not defined
       changed_when: >
-      sdb.stdout == "Error: Partition doesn't exist."
-
+        sdb.stdout == "Error: Partition doesn't exist."
+      
     - lvol: vg=datavg lv=data size=128 pvs=/dev/sdb
       when: sdb.rc != 0
 
