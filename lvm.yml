@@ -7,12 +7,12 @@
 
     tasks:
 
-    - name: Create LVM
-      command: test -b /dev/sdb
-      register: sdb
-      failed_when: sdb.rc is not defined
-      changed_when: >
-        sdb.stdout == "Error: Partition doesn't exist."
+    # - name: Create LVM
+    #   command: test -b /dev/sdb
+    #   register: sdb
+    #   failed_when: sdb.rc is not defined
+    #   changed_when: >
+    #     sdb.stdout == "Error: Partition doesn't exist."
 
     - lvol: vg=datavg lv=data size=128 pvs=/dev/sdb
 
