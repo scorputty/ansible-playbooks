@@ -25,6 +25,14 @@
         filesystem: 'ext4'                                      # set to filesystem type to format new logical volume with ( ext3, ext4, xfs, etc. )
 
     tasks:
+      
+    - name: installing lvm2
+      yum: name=system-storage-manager state=present
+      when: config_lvm and ansible_os_family == "RedHat"
+
+    - name: installing sg3_utils
+      yum: name=sg3_utils state=present
+      when: config_lvm and ansible_os_family == "RedHat"
 
     - name: rescanning for new disks
       command: /usr/bin/rescan-scsi-bus.sh
