@@ -6,7 +6,7 @@
     become: true
 
     vars:
-        config_lvm: false                                       # must be set to true in order to execute any tasks in play (failsafe option :)- )
+        config_lvm: true                                       # must be set to true in order to execute any tasks in play (failsafe option :)- )
         create: false                                           # set to true if creating a new logical volume (do not set extend or resize to true)
         resize: false                                           # set to true if resizing the logical volume (do not set create to true)
         extend: false                                           # set to true if extending the logical volume (do not set create to true)
