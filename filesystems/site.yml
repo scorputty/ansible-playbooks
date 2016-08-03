@@ -1,8 +1,9 @@
 ---
 # This playbook does filesystem operations
 
- - hosts: all
-   become: true
-   
-   roles:
-     - common
+  - name: configure filesystem
+    hosts: all
+    become: true
+
+    roles:
+      - common
