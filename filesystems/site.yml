@@ -2,3 +2,6 @@
 # This playbook does filesystem operations
 - hosts: all
   become: true
+
+  tasks:
+    - include: tasks/main.yml
