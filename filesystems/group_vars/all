@@ -5,7 +5,7 @@
     create: false                                           # set to true if creating a new logical volume (do not set extend or resize to true)
     resize: false                                           # set to true if resizing the logical volume (do not set create to true)
     extend: false                                           # set to true if extending the logical volume (do not set create to true)
-    current_disk: '/dev/sda5'                               # set to your current disk device already setup in lvm
+    current_disk: '/dev/sda'                               # set to your current disk device already setup in lvm
     new_disk: '/dev/sdb'                                    # set to new disk being added to volume group
     new_mntp: '/opt/data'                                   # set to the desired mount point to be created
     create_vgname: 'data-vg'                                # set to volume group name to create
