@@ -1,0 +1,4 @@
+---
+# This playbook does filesystem operations
+- hosts: all
+  become: true
