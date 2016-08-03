@@ -1,7 +1,7 @@
 ---
   vars:
       config_lvm: true                                        # must be set to true in order to execute any tasks in play (failsafe option :)- )
-      create: false                                          # set to true if creating a new logical volume (do not set extend or resize to true)
+      create: false                                           # set to true if creating a new logical volume (do not set extend or resize to true)
       resize: false                                           # set to true if resizing the logical volume (do not set create to true)
       extend: false                                           # set to true if extending the logical volume (do not set create to true)
       current_disk: '/dev/sda5'                               # set to your current disk device already setup in lvm
