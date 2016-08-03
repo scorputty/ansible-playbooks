@@ -12,11 +12,11 @@
       when: config_lvm and ansible_os_family == "RedHat"
 
     - name: Create LVM rescan for new disks
-      command: test -b /dev/sdb
-      register: sdb
-      failed_when: sdb.rc is not defined
+      command: test -b /dev/{{ create_vgname }}
+      register: newdisk
+      failed_when: newdisk.rc is not defined
       changed_when: >
-        sdb.stdout == "Error: Partition doesn't exist."
+        newdisk.stdout == "Error: Partition doesn't exist."
 
     - name: creating new LVM volume group
       lvg: vg={{ create_vgname }} pvs={{ new_disk }} state=present
