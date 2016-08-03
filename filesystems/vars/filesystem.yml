@@ -1,7 +1,7 @@
 ---
   vars:
       config_lvm: true                                        # must be set to true in order to execute any tasks in play (failsafe option :)- )
-      create_: false                                          # set to true if creating a new logical volume (do not set extend or resize to true)
+      create: false                                          # set to true if creating a new logical volume (do not set extend or resize to true)
       resize: false                                           # set to true if resizing the logical volume (do not set create to true)
       extend: false                                           # set to true if extending the logical volume (do not set create to true)
       current_disk: '/dev/sda5'                               # set to your current disk device already setup in lvm
@@ -10,10 +10,10 @@
       create_vgname: 'data-vg'                                # set to volume group name to create
       create_lvname: 'data-lv'                                # set to logical volume name to create
       create_lvsize: '100%FREE'                               # set to logical volume size to create --- (10G) - would create new lvm with 10Gigabytes -- (512) - would create new lvm with 512m
-      resize_vgname: 'test-vg'                                # set to volume group name to resize
-      resize_lvname: 'test-lv'                                # set to logical volume name to resize
-      extend_disks: '{{ current_disk }},{{ new_disk }}'       # first disk is current volume group
-      extend_vgname: 'test-vg'                                # set to volume group name to extend
-      extend_lvname: 'test-lv'                                # set to logical volume name to extend
+      resize_vgname: 'data-vg'                                # set to volume group name to resize
+      resize_lvname: 'data-lv'                                # set to logical volume name to resize
+      extend_vgname: 'data-vg'                                # set to volume group name to extend
+      extend_lvname: 'data-lv'                                # set to logical volume name to extend
       lvextend_options: '-L+10G'                              # setting the options to pass to lvextend --- ('-L+10G') - would increase by 10GB whereas ('-l +100%FREE') would increase to full capacity
+      extend_disks: '{{ current_disk }},{{ new_disk }}'       # first disk in current volume group
       filesystem: 'ext4'                                      # set to filesystem type to format new logical volume with ( ext3, ext4, xfs, etc. )
